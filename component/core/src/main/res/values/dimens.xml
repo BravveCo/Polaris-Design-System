@@ -1,2 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <dimen name="design_no_space">0dp</dimen>
+    <dimen name="design_xxs">4dp</dimen>
+    <dimen name="design_xs">8dp</dimen>
+    <dimen name="design_s">12dp</dimen>
+    <dimen name="design_m">16dp</dimen>
+    <dimen name="design_l">24dp</dimen>
+    <dimen name="design_lg">32dp</dimen>
+    <dimen name="design_xl">48dp</dimen>
+    <dimen name="design_xxl">56dp</dimen>
+    <dimen name="design_lxs">64dp</dimen>
+    <dimen name="design_lsm">80dp</dimen>
+
+
+</resources>
