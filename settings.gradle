@@ -7,6 +7,6 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "MaterialDesignSystem"
-include ':app'
+include ':sample'
 include ':component'
 include ':component:core'
