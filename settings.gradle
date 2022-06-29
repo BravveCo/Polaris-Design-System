@@ -6,7 +6,7 @@ dependencyResolutionManagement {
         jcenter() // Warning: this repository is going to shut down soon
     }
 }
-rootProject.name = "MaterialDesignSystem"
+rootProject.name = "androidds"
 include ':sample'
 include ':component'
 include ':component:core'
