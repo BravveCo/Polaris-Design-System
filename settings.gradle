@@ -10,3 +10,4 @@ rootProject.name = "MaterialDesignSystem"
 include ':sample'
 include ':component'
 include ':component:core'
+include ':component:button'
