@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="polaris_radius_xxs">4dp</dimen>
+    <dimen name="polaris_radius_xs">8dp</dimen>
+    <dimen name="polaris_radius_s">12dp</dimen>
+    <dimen name="polaris_radius_m">16dp</dimen>
+    <dimen name="polaris_radius_l">24dp</dimen>
+</resources>
