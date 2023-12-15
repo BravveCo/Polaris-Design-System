@@ -36,15 +36,15 @@ dependencies {
 }
 
 afterEvaluate {
-    def nameApp  = project.name
+    def nameApp  = project.name.toLowerCase()
     def packageName = 'com.developer.design.system'
     publishing {
         publications {
             release(MavenPublication) {
                 from components.release
 
-                groupId = packageName
-                artifactId = nameApp
+                groupId = packageName.toLowerCase()
+                artifactId = nameApp.toLowerCase()
                 version = '0.0.0.4'
             }
         }

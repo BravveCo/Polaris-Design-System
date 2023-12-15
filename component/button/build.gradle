@@ -35,7 +35,7 @@ dependencies {
 
 afterEvaluate {
 
-    def nameApp  = project.name
+    def nameApp  = project.name.toLowerCase()
     def packageName = 'com.developer.design.system'
 
     publishing {
@@ -44,7 +44,7 @@ afterEvaluate {
                 from components.release
 
                 groupId = packageName
-                artifactId = nameApp
+                artifactId = nameApp.toLowerCase()
                 version = '0.0.0.4'
             }
         }
