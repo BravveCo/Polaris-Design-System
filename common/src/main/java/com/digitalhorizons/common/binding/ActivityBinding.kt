@@ -9,7 +9,6 @@ import kotlin.reflect.KProperty
 
 inline fun <reified T : ViewBinding> Activity.viewBinding() =
     ActivityViewBindingDelegate(T::class.java)
-
 class ActivityViewBindingDelegate<T : ViewBinding>(private val bindingClass: Class<T>) :
     ReadOnlyProperty<Activity, T> {
     /**
