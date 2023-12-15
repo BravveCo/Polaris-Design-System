@@ -3,7 +3,7 @@ name: publish artifact
 on:
   push:
     tags:
-      - "v*.*.*"
+      - "*.*.*.*"
 
 jobs:
   release:

@@ -1,43 +1,41 @@
 package com.developer.design.system.sample
 
+import android.app.Activity
 import android.content.res.Configuration
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.RadioButton
 import androidx.appcompat.app.AppCompatDelegate
+import com.developer.design.system.sample.databinding.ActivityMainBinding
+import com.digitalhorizons.common.binding.viewBinding
 
-class MainActivity : AppCompatActivity() {
-    
-    lateinit var radioDark:RadioButton
-    lateinit var radioLight:RadioButton
-    lateinit var radioSystem:RadioButton
-    
+class MainActivity : Activity() {
+
+    private val binding: ActivityMainBinding by viewBinding()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        radioDark = findViewById(R.id.radio_dark)
-        radioLight = findViewById(R.id.radio_ligth)
-        radioSystem = findViewById(R.id.radio_system)
-        
-        
-        radioDark.setOnCheckedChangeListener { buttonView, isChecked ->
-            if (isChecked){
+
+
+
+        binding.radioDark.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked) {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-                val isNightTheme = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
+                val isNightTheme =
+                    resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
 
             }
         }
 
-        radioSystem.setOnCheckedChangeListener { buttonView, isChecked ->
-            if (isChecked){
+        binding.radioSystem.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked) {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
 
             }
 
         }
 
-        radioLight.setOnCheckedChangeListener { buttonView, isChecked ->
-            if (isChecked){
+        binding.radioLigth.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked) {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
             }
         }
