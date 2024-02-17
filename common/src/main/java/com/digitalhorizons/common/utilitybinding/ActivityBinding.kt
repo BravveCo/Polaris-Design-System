@@ -1,4 +1,4 @@
-package com.digitalhorizons.common.binding
+package com.digitalhorizons.common.utilitybinding
 
 
 import android.app.Activity
@@ -30,7 +30,6 @@ class ActivityViewBindingDelegate<T : ViewBinding>(private val bindingClass: Cla
          * Bind layout
          */
         val invokeLayout = inflateMethod.invoke(null, thisRef.layoutInflater) as T
-
         /**
          * Set the content view
          */

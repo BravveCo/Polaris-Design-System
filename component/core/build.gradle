@@ -1,15 +1,13 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
-    id 'maven-publish'
 }
 
 android {
-    compileSdk 31
+    compileSdk 34
 
     defaultConfig {
         minSdk 21
-        targetSdk 31
         versionCode 1
         versionName "1.0"
 
@@ -30,30 +28,13 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    viewBinding {
+        enabled = true
+    }
 }
 
 dependencies {
-
-    implementation 'androidx.core:core-ktx:1.8.0'
-    implementation 'androidx.appcompat:appcompat:1.4.2'
-    implementation 'com.google.android.material:material:1.6.1'
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation project("::common")
 }
 
-afterEvaluate {
-    def nameApp  = project.name
-    def packageName = 'com.developer.design.system'
-    publishing {
-        publications {
-            release(MavenPublication) {
-                from components.release
-
-                groupId = packageName
-                artifactId = nameApp
-                version = '0.0.0.4'
-            }
-        }
-    }
-}
+apply from: '../../publish-package.gradle'
