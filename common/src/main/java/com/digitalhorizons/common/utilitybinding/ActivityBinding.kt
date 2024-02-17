@@ -1,4 +1,4 @@
-package com.digitalhorizons.common.binding
+package com.digitalhorizons.common.utilitybinding
 
 
 import android.app.Activity

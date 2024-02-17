@@ -1,4 +1,4 @@
-package com.digitalhorizons.common.binding
+package com.digitalhorizons.common.utilitybinding
 
 import android.view.View
 import androidx.fragment.app.Fragment
@@ -17,31 +17,21 @@ class FragmentViewBindingDelegate<T : ViewBinding>(
     private val fragment: Fragment
 ) : ReadOnlyProperty<Fragment, T> {
 
-    /**
-     * initiate variable for binding view
-     */
     private var binding: T? = null
 
-    /**
-     * get the bind method from View class
-     */
+
     private val bindMethod = bindingClass.getMethod("bind", View::class.java)
 
     @Suppress("UNCHECKED_CAST")
     override fun getValue(thisRef: Fragment, property: KProperty<*>): T {
         binding?.let { return it }
 
-        /**
-         * Adding observer to the fragment lifecycle
-         */
+
         fragment.lifecycle.addObserver(object : DefaultLifecycleObserver {
             override fun onCreate(owner: LifecycleOwner) {
                 fragment.viewLifecycleOwnerLiveData.observe(fragment) { viewLifecycleOwner ->
                     viewLifecycleOwner.lifecycle.addObserver(object : DefaultLifecycleObserver {
                         override fun onDestroy(owner: LifecycleOwner) {
-                            /**
-                             * Clear the binding when Fragment lifecycle called the onDestroy
-                             */
                             binding = null
                         }
                     })
@@ -50,18 +40,12 @@ class FragmentViewBindingDelegate<T : ViewBinding>(
         })
 
 
-        /**
-         * Checking the fragment lifecycle
-         */
         val lifecycle = fragment.viewLifecycleOwner.lifecycle
         if (!lifecycle.currentState.isAtLeast(Lifecycle.State.INITIALIZED)) {
             error("Cannot access view bindings. View lifecycle is ${lifecycle.currentState}!")
         }
 
 
-        /**
-         * Bind layout
-         */
         val invoke = bindMethod.invoke(null, thisRef.requireView()) as T
 
         return invoke.also { this.binding = it }

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="HyperLink">
+        <attr name="text" format="string|reference" />
+        <attr name="link" format="string|reference" />
+        <attr name="type" format="enum">
+            <enum name="neutral" value="0" />
+            <enum name="warning" value="1" />
+            <enum name="success" value="2" />
+            <enum name="error" value="3" />
+        </attr>
+    </declare-styleable>
+</resources>
