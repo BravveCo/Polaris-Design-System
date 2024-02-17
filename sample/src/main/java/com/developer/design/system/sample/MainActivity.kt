@@ -5,7 +5,7 @@ import android.content.res.Configuration
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatDelegate
 import com.developer.design.system.sample.databinding.ActivityMainBinding
-import com.digitalhorizons.common.binding.viewBinding
+import com.digitalhorizons.common.utilitybinding.viewBinding
 
 class MainActivity : Activity() {
 

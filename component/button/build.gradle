@@ -1,8 +1,6 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
-    id 'maven-publish'
-
 }
 
 android {
@@ -27,26 +25,14 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    viewBinding {
+        enabled = true
+    }
 }
 
 dependencies {
     implementation project("::common")
 }
 
-afterEvaluate {
-
-    def nameApp  = project.name.toLowerCase()
-    def packageName = 'com.developer.design.system'
-
-    publishing {
-        publications {
-            release(MavenPublication) {
-                from components.release
-
-                groupId = packageName
-                artifactId = nameApp.toLowerCase()
-                version = '0.0.0.4'
-            }
-        }
-    }
-}
+apply from: '../../publish-package.gradle'
