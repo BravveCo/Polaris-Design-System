@@ -4,6 +4,8 @@ plugins {
 }
 
 android {
+    namespace 'com.developer.design.system.sample'
+
     compileSdk 34
 
     defaultConfig {

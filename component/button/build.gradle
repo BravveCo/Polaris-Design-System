@@ -5,6 +5,8 @@ plugins {
 
 android {
     compileSdk 34
+    namespace 'com.digitalhorizons.button'
+
 
     defaultConfig {
         minSdk 21
