@@ -2,6 +2,7 @@ plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
     id 'maven-publish'
+    id 'signing'
     id 'org.jetbrains.kotlin.plugin.serialization' version '1.9.22'
 }
 
@@ -35,13 +36,15 @@ dependencies {
     implementation libs.androidxCoreKtx
     implementation libs.androidxAppcompat
     testImplementation libs.junit
-    implementation libs.kotlinxCoroutinesCore
-    implementation libs.kotlinxCoroutinesAndroid
-    implementation libs.moshi
-    implementation libs.converterMoshi
-    implementation libs.kotlinxSerialization
-    implementation libs.converterKotlinxSerialization
+    api libs.kotlinxCoroutinesCore
+    api libs.kotlinxCoroutinesAndroid
+    api libs.moshi
+    api libs.converterMoshi
+    api libs.kotlinxSerialization
+    api libs.converterKotlinxSerialization
     implementation libs.timber
-    implementation libs.retrofit
-    implementation libs.loggingInterceptor
+    api libs.retrofit
+    api libs.loggingInterceptor
 }
+
+apply from: '../publish-package.gradle'
