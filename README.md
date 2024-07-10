@@ -7,4 +7,4 @@
 ```
 
 ### Site para validar e enviar nova versão
-[Bintray](https://bintray.com/digitalhorizonsco/Polaris-Design-System/polaris-design-system)
+[Sonatype](https://s01.oss.sonatype.org/#welcome)
