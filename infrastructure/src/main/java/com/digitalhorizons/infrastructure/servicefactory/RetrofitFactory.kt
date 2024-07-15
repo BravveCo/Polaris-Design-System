@@ -7,15 +7,18 @@ import retrofit2.Retrofit
 import retrofit2.converter.kotlinx.serialization.asConverterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
 
+const val TYPE = "application/json; charset=UTF8"
+val json = Json { ignoreUnknownKeys = true }
+
+
 object RetrofitFactory {
     inline fun <reified T> createRetrofit(okHttpClient: OkHttpClient, url: String): T {
         return Retrofit.Builder()
             .baseUrl(url)
             .client(okHttpClient)
-            .addConverterFactory(MoshiConverterFactory.create())
             .addConverterFactory(
-                Json.asConverterFactory(
-                    "application/json; charset=UTF8".toMediaType()
+                json.asConverterFactory(
+                    TYPE.toMediaType()
                 )
             )
             .build()
