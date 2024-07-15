@@ -8,3 +8,6 @@
 
 ### Site para validar e enviar nova versão
 [Sonatype](https://s01.oss.sonatype.org/#welcome)
+
+### Site para consultar as versões versão
+[Sonatype](https://search.maven.org/search?q=io.github.allefsousa.polaris)
