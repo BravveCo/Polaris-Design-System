@@ -7,11 +7,11 @@ import androidx.lifecycle.ViewModel
 abstract class BaseViewModel<ViewState, ViewAction> : ViewModel() {
     private val _state = MutableLiveData<ViewState>()
 
-    private val _action = OneShotLiveData<ViewAction>()
+    private val _action = SingleLiveEvent<ViewAction>()
 
     val state: LiveData<ViewState> get() = _state
 
-    val action: LiveData<ViewAction> get() = _action
+    val action: LiveData<ViewAction> get() = _action as LiveData<ViewAction>
 
     fun sendAction(action: ViewAction) {
         _action.value = action
@@ -19,12 +19,5 @@ abstract class BaseViewModel<ViewState, ViewAction> : ViewModel() {
 
     fun sendState(newState: ViewState) {
         _state.value = newState
-    }
-}
-
-class OneShotLiveData<T> : MutableLiveData<T>() {
-    override fun setValue(value: T?) {
-        super.setValue(value)
-        super.setValue(null)
     }
 }
