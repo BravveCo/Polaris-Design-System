@@ -12,11 +12,13 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.MaterialDesignSystem"
-            >
+            android:theme="@style/Theme.MaterialDesignSystem" />
+        <activity
+            android:name="com.developer.design.system.sample.preview.PreviewActivity"
+            android:exported="true"
+            android:theme="@android:style/Theme.Material.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

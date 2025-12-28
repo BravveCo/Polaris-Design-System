@@ -20,6 +20,6 @@ dependencyResolutionManagement {
 }
 rootProject.name = "material-design-system"
 include ':sample'
-include ':component'
 include ':common'
 include ':infrastructure'
+include ':polaris'

@@ -48,6 +48,12 @@ dependencies {
     api libs.lifecycleCommon
     api libs.lifecycleRuntimeKtx
     api libs.fragmentKtx
+    api libs.coil
+    api libs.shimmer
+    api libs.lottie
+
+
+
 
 
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'

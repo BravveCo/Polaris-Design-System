@@ -1,4 +1,4 @@
-package com.digitalhorizons.designsystem
+package com.pixelstudio.polaris
 
 import org.junit.Test
 

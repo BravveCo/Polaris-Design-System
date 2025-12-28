@@ -1,4 +1,4 @@
-package com.digitalhorizons.designsystem
+package com.pixelstudio.polaris
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.digitalhorizons.designsystem.test", appContext.packageName)
+        assertEquals("com.pixelstudio.polaris", appContext.packageName)
     }
 }
