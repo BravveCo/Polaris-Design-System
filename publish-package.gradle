@@ -23,6 +23,7 @@ tasks.register('androidJavadoc', Javadoc) {
     }
 }
 
+
 tasks.register('androidJavadocJar', Jar) {
     dependsOn androidJavadoc
     archiveClassifier.set('javadoc')
@@ -47,11 +48,11 @@ afterEvaluate {
 
                 from components.release
 
-               //artifact androidJavadocJar
-               artifact javaSourcesJar
+                //artifact androidJavadocJar
+                //artifact javaSourcesJar
 
-                groupId 'io.github.allefsousa.polaris.designsystem'
-                version '1.0.4'
+                groupId 'io.github.allefsousa.polaris'
+                version '1.1.9'
                 pom {
                     name = 'Polaris Design System'
                     description = 'A Design System library for Android'
@@ -75,6 +76,8 @@ afterEvaluate {
                     }
                 }
             }
+            tasks.named("generateMetadataFileForReleasePublication").configure { dependsOn("javaSourcesJar") }
+
         }
         repositories {
             maven {
