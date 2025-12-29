@@ -1,17 +1,16 @@
 package com.digitalhorizons.infrastructure.servicefactory
 
-import android.util.Log
 import okhttp3.logging.HttpLoggingInterceptor
-import timber.log.Timber
+import com.digitalhorizons.infrastructure.BuildConfig
 
 private const val TAG = "okhttp"
 
 object OkHttpLoggingFactory {
     fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor =
         HttpLoggingInterceptor().apply {
-            level = if (true)
+            level = if (BuildConfig.DEBUG)
                 HttpLoggingInterceptor.Level.BODY
             else
-                HttpLoggingInterceptor.Level.BODY
+                HttpLoggingInterceptor.Level.NONE
         }
 }

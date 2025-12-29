@@ -5,9 +5,9 @@ plugins {
 }
 
 mavenPublishing {
-    def resolvedGroup =  'io.github.digitalhorizonsco'
+    def resolvedGroup = 'io.github.digitalhorizonsco'
     def resolvedArtifact = 'infrastructure'
-    def resolvedVersion = '0.0.1'
+    def resolvedVersion = '0.0.2'
 
     coordinates(resolvedGroup.toString(), resolvedArtifact.toString(), resolvedVersion.toString())
 
@@ -46,7 +46,7 @@ mavenPublishing {
 
 android {
     namespace 'com.digitalhorizons.infrastructure'
-    compileSdk 34
+    compileSdk 36
 
     defaultConfig {
         minSdk 21
@@ -55,10 +55,16 @@ android {
         consumerProguardFiles "consumer-rules.pro"
     }
 
+    buildFeatures {
+        buildConfig = true
+    }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
         }
     }
     compileOptions {

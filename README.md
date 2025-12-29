@@ -12,3 +12,4 @@
 
 ### Site para consultar as ultimas versões
 [Sonatype](https://search.maven.org/search?q=io.github.allefsousa.polaris)
+
