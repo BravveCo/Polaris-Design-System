@@ -44,6 +44,10 @@ abstract class BaseListAdapter<T : Any, VB : ViewBinding> :
         }
     }
 
+    override fun getItemViewType(position: Int): Int {
+        return getViewType(getItem(position))
+    }
+
     abstract fun inflateView(inflater: LayoutInflater, viewType: Int): VB
 
     abstract fun bind(binding: VB, position: Int, item: T)
